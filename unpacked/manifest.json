@@ -1,12 +1,12 @@
 {
-	"name": "Save All Resources",
+	"name": "保存页面",
 	"version": "0.1.8",
-	"description": "UP - Save all resources files with retaining folder structure.",
+	"description": "保存页面及其资源到本地",
 	"icons": {
-    "128": "icon.gif"
+    "128": "icon.png"
 	},
 	"browser_action": {
-    "default_icon": "icon.gif",
+    "default_icon": "icon.png",
 		"default_title": "UP",
 		"default_popup": "popup.html"
   },
