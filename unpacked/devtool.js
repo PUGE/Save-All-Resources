@@ -1,6 +1,6 @@
 //console.log('Hello from -> Devtool');
 chrome.devtools.panels.create(
-	"ResourcesSaver",
+	"下载资源",
 	"icon.gif",
 	"content.html",
 	function(panel) { 

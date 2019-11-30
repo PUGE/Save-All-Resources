@@ -2,24 +2,25 @@
 <html>
 <head>
 	<title>Popup</title>
+	<meta charset="utf-8">
 	<link href="fonts/styles.css" rel="stylesheet" type="text/css" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="up-content">
-		<h1>Resources Saver
-    	<button id="up-save">Save All Resources</button>
+		<h1>下载资源
+    	<button id="up-save">下载所有资源</button>
 		</h1>
 		<ul id="options">
-			<li id="option-content"><input id="check-content" type="checkbox" checked/> <label id="label-content" for="check-content">Keep all "No Content" files</label></li>
-			<li id="option-zip"><input id="check-zip" type="checkbox" checked disabled/> <label id="label-zip" for="check-zip">Compress all assets & download at once <B>(Recommended)</B></label></li>
-			<li id="option-beautify"><input id="check-beautify" type="checkbox"/> <label id="label-beautify" for="check-beautify">Beautify JS,HTML,CSS code before download.</label></li>
-    	<li id="option-all"><input id="check-all" type="checkbox" checked/> <label for="check-all">Download from all domains in current resources.</label></li>
-			<li id="option-cache"><input id="check-cache" type="checkbox" checked/> <label for="check-cache">Save resource contents from system cache.</label></li>
-			<li id="option-xhr"><input id="check-xhr" type="checkbox"/> <label id="label-xhr" for="check-xhr">Include all assets by XHR requests (require page reload).</label></li>
+			<li id="option-content"><input id="check-content" type="checkbox" checked/> <label id="label-content" for="check-content">保留所有"无内容"资源.</label></li>
+			<li id="option-zip"><input id="check-zip" type="checkbox" checked disabled/> <label id="label-zip" for="check-zip">压缩资源并立刻开始下载<B>(推荐)</B>.</label></li>
+			<li id="option-beautify"><input id="check-beautify" type="checkbox"/> <label id="label-beautify" for="check-beautify">格式化资源中的js, html, css文件.</label></li>
+    	<li id="option-all"><input id="check-all" type="checkbox" checked/> <label for="check-all">下载当前域名下的所有资源.</label></li>
+			<li id="option-cache"><input id="check-cache" type="checkbox" checked/> <label for="check-cache">从系统缓存中下载资源.</label></li>
+			<li id="option-xhr"><input id="check-xhr" type="checkbox"/> <label id="label-xhr" for="check-xhr">通过XHR下载所有资源(需要刷新页面).</label></li>
   	</ul>
 		<div id="refresh">
-			<div id="refresh-tip">Reset/Stop the Ext in case something stuck</div>
+			<div id="refresh-tip">停止所有任务并还原插件状态</div>
 			<img width="20" src="refresh.svg" alt="Refresh App"/>
 		</div>
 		<p id="status"></p>
@@ -31,6 +32,6 @@
 	<script src="beautify/beautify-css.js"></script>
 	<script src="beautify/beautify-html.js"></script>
 	<script src="zip/zip.js"></script>
-	<script src="content.js"></script>
+	<script src="content.js" charset="utf-8"></script>
 </body>
 </html>

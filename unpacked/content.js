@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       chrome.devtools.inspectedWindow.getResources(function (resources) {
         if (!isDownloading) {
-          document.getElementById('status').innerHTML = 'Static Resources count: ' + resources.length;
+          document.getElementById('status').innerHTML = '静态资源数量: ' + resources.length;
         }
       })
     }
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chrome.devtools.inspectedWindow.getResources(function (resources) {
     if (!isDownloading) {
-      document.getElementById('status').innerHTML = 'Static resources count: ' + resources.length;
+      document.getElementById('status').innerHTML = '静态资源数量: ' + resources.length;
     }
   });
 
@@ -313,15 +313,15 @@ function allDone(isSuccess) {
   // Report in the end
   if (isSuccess) {
     endStatus.className = 'all-done';
-    endStatus.innerHTML = 'Downloaded All Files !!!';
+    endStatus.innerHTML = '所有文件下载成功 !!!';
     document.getElementById('debug').insertBefore(endStatus, document.getElementById('debug').childNodes[0]);
 
     var openDownload = document.createElement('button');
-    openDownload.innerHTML = 'Open';
+    openDownload.innerHTML = '打开';
     openDownload.addEventListener('click', function () {
       chrome.downloads.showDefaultFolder();
     });
-    document.getElementById('open-folder').innerHTML = 'Resources Folder: ';
+    document.getElementById('open-folder').innerHTML = '下载目录: ';
     document.getElementById('open-folder').appendChild(openDownload);
 
   } else {
@@ -331,7 +331,7 @@ function allDone(isSuccess) {
   }
 
   // Restore/Change button state
-  document.getElementById('up-save').innerHTML = 'Re-Download?';
+  document.getElementById('up-save').innerHTML = '重新下载?';
   document.getElementById('up-save').disabled = false;
 }
 
@@ -842,11 +842,11 @@ function addItemsToZipWriter(blobWriter, items, callback) {
               addItemsToZipWriter(blobWriter, rest, callback);
 
               // Update Status
-              document.getElementById('status').innerHTML = 'Compressed: ' + item.url;
+              document.getElementById('status').innerHTML = '打包文件: ' + item.url;
 
               // Update Report Table
               newList.className = 'each-done';
-              newList.innerHTML = '<li>Added</li><li class="success">Done</li><li>' + item.url + '</li>';
+              newList.innerHTML = '<li>下载</li><li class="success">成功</li><li>' + item.url + '</li>';
               reportElement.insertBefore(newList, reportElement.childNodes[0]);
             },
             function () {
@@ -861,11 +861,11 @@ function addItemsToZipWriter(blobWriter, items, callback) {
                 addItemsToZipWriter(blobWriter, rest, callback);
 
                 // Update Status
-                document.getElementById('status').innerHTML = 'Compressed: ' + item.url;
+                document.getElementById('status').innerHTML = '打包文件: ' + item.url;
 
                 // Update Report Table
                 newList.className = 'each-done';
-                newList.innerHTML = '<li>Added</li><li class="success"><b>No Content</b></li><li>' + item.url + '</li>';
+                newList.innerHTML = '<li>下载</li><li class="success"><b>内容为空</b></li><li>' + item.url + '</li>';
                 reportFailedElement.insertBefore(newList, reportFailedElement.childNodes[0]);
               },
               function () {
@@ -880,7 +880,7 @@ function addItemsToZipWriter(blobWriter, items, callback) {
 
             // Update Report Table
             newList.className = 'each-failed';
-            newList.innerHTML = '<li>Ignored</li><li class="failed"><b>No Content</b></li><li>' + item.url + '</li>';
+            newList.innerHTML = '<li>忽略</li><li class="failed"><b>内容为空</b></li><li>' + item.url + '</li>';
             reportFailedElement.insertBefore(newList, reportFailedElement.childNodes[0]);
 
             // To the next item
@@ -896,7 +896,7 @@ function addItemsToZipWriter(blobWriter, items, callback) {
 
         // Update Report Table
         newList.className = 'each-failed';
-        newList.innerHTML = '<li>Ignored</li><li class="failed">Request Failed</li><li>' + item.url + '</li>';
+        newList.innerHTML = '<li>忽略</li><li class="failed">请求失败</li><li>' + item.url + '</li>';
         reportFailedElement.insertBefore(newList, reportFailedElement.childNodes[0]);
 
         // To the next item
